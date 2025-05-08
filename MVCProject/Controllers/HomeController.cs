@@ -26,5 +26,17 @@ namespace MVCProject.Controllers
 
             return View();
         }
+        public ActionResult Registration()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        } 
+        public ActionResult LoginFrom()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
