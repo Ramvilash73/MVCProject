@@ -2,46 +2,96 @@
 @{
     ViewBag.Title = "Registration";
 }
-
 <h2 style="color:dodgerblue">Registration</h2>
-
-
-<form>
+<form method="post" action="/Home/Registration">
     <div class="row">
         <div class="col-3">
-            <label for="inputEmail4">Email</label>
-            <input type="text" class="form-control" placeholder="First name">
+            <label for="inputEmail4">Name</label>
+            <input type="text" name="name" required class="form-control" placeholder="Enter Name">
         </div>
         <div class="col-3">
             <label for="inputEmail4">Email</label>
-            <input type="text" class="form-control" placeholder="Last name">
+            <input type="text" name="Email" required class="form-control" placeholder="Enter Email">
         </div>
     </div>
     <div class="row" style="margin-top:10px">
         <div class="col-3">
-            <label for="inputEmail4">Email</label>
-            <input type="text" class="form-control" placeholder="First name">
+            <label for="inputEmail4">Phone</label>
+            <input type="text" name="Phone" required class="form-control" placeholder="Enter Phone">
         </div>
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="Last name">
+            <label for="inputEmail4">DOB</label>
+            <input type="text" name="DOB" required class="form-control" placeholder="Enter DOB">
         </div>
     </div>
     <div class="row" style="margin-top:10px">
         <div class="col-3">
-            <label for="inputEmail4">Email</label>
-            <input type="text" class="form-control" placeholder="First name">
+            <label for="inputEmail4">Aadhar card no</label>
+            <input type="text" name="Aadhar" required class="form-control" placeholder="Enter Aaddhar No.">
         </div>
         <div class="col-3">
-            <label for="inputEmail4">Email</label>
-            <input type="text" class="form-control" placeholder="Last name">
+            <label for="inputEmail4">Address</label>
+            <input type="text" name="Address" required class="form-control" placeholder="Enter Address">
         </div>
     </div>
     <div class="row" style="margin-top:10px">
         <div class="col-3">
-            <input type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="col-3">
-            <input type="text" class="form-control" placeholder="Last name">
+            <label for="inputEmail4">Password</label>
+            <input type="text" name="Password" required class="form-control" placeholder="Enter Password">
         </div>
     </div>
+    <div class="row" style="margin-top:10px">
+        <div class="col-3">
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+        <div class="col-3">
+                   <button type="button" id="btnLogin" onclick="showModal()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Login Here
+        </button>
+                </div>
+    </div>
+
 </form>
+<br />
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="justify-content: space-between;background-color:red;color:white;">
+                <h5 class="modal-title" id="exampleModalLabel">Login here</h5>
+                <button type="button" onclick="closeModal()" class="close"style="background-color: white;" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row" style="margin-top:10px">
+                    <div class="col-6">
+                        <label for="inputEmail4">User Id</label>
+                        <input type="text" name="Password" required class="form-control" placeholder="Enter User Id">
+                    </div>
+                </div><div class="row" style="margin-top:10px">
+                    <div class="col-6">
+                        <label for="inputEmail4">Password</label>
+                        <input type="text" name="Password" required class="form-control" placeholder="Enter Password">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" style="background-color: red; color:white;" class="btn btn-secondary"onclick="closeModal()" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showModal() {
+        $('#exampleModal').modal('show');
+    }
+    function closeModal() {
+        $('#exampleModal').modal('hide');
+    }
+    
+</script>
